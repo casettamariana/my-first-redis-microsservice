@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+
+  redis_monitoring:
+    container_name: redis_monitoring
+    image: redis
+    ports:
+      - "6379:6380"
+    networks:
+      - redis_network_for_monitoring
+
+networks:
+  redis_network_for_monitoring:
+    driver: bridge
